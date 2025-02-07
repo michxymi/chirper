@@ -35,7 +35,7 @@ export default function Register() {
     return (
         <>
             <Head title="Register" />
-            <InertiaFormErrors errors={errors} />            
+            <InertiaFormErrors title="Registration Error" errors={errors} />            
             <div className="flex min-h-screen flex-1 flex-col justify-center px-4 lg:px-6">
                 <div className="sm:mx-auto sm:w-full sm:max-w-md">
                     <RiDonutChartFill
