@@ -5,7 +5,7 @@
 
 // 'use client';
 
-import { RiDonutChartFill } from '@remixicon/react';
+import { RiDonutChartFill, RiCloseCircleFill } from '@remixicon/react';
 import { Head, Link, useForm } from '@inertiajs/react';
 import { FormEventHandler } from 'react';
 import { route } from "momentum-trail"
@@ -35,7 +35,7 @@ export default function Register() {
     return (
         <>
             <Head title="Register" />
-            <InertiaFormErrors title="Registration Error" errors={errors} />            
+            <InertiaFormErrors title="Registration Failed" errors={errors} icon={RiCloseCircleFill}/>
             <div className="flex min-h-screen flex-1 flex-col justify-center px-4 lg:px-6">
                 <div className="sm:mx-auto sm:w-full sm:max-w-md">
                     <RiDonutChartFill
