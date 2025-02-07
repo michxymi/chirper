@@ -1,15 +1,9 @@
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
+import { route } from "momentum-trail"
 
 export default function Dashboard() {
     return (
-        <AuthenticatedLayout
-            header={
-                <h2 className="text-xl font-semibold leading-tight text-gray-800">
-                    Dashboard
-                </h2>
-            }
-        >
+        <>
             <Head title="Dashboard" />
 
             <div className="py-12">
@@ -18,9 +12,13 @@ export default function Dashboard() {
                         <div className="p-6 text-gray-900">
                             You're logged in!
                         </div>
+                        <Link href={route("logout")} method="post">
+                            Logout
+                        </Link>
                     </div>
                 </div>
+
             </div>
-        </AuthenticatedLayout>
+        </>
     );
 }
