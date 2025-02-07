@@ -47,7 +47,7 @@ export default function Login({
                     {status}
                 </Callout>
             }
-            <InertiaFormErrors title="Authentication Error" errors={errors} icon={RiCloseCircleFill}/>
+            <InertiaFormErrors title="Login Failed" errors={errors} icon={RiCloseCircleFill}/>
             <div className="flex min-h-screen flex-1 flex-col justify-center px-4 lg:px-6">
                 <div className="sm:mx-auto sm:w-full sm:max-w-md">
                     <div className="flex items-center space-x-2.5">
