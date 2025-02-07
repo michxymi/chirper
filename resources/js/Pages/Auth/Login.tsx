@@ -1,6 +1,22 @@
-import { Head, Link, useForm } from '@inertiajs/react';
+// Modify your layout / template file as follows to center login form across the screen
+
+// <html className"h-full"/>
+// <body className"h-full"/>
+
+// 'use client';
+
+import { Button } from '@/Components/UI/Button';
+import { Divider } from '@/Components/UI/Divider';
+import { Input } from '@/Components/UI/Input';
+import { Label } from '@/Components/UI/Label';
+import { Callout } from '@/Components/UI/Callout';
+import { Checkbox } from '@/Components/UI/Checkbox';
 import { FormEventHandler } from 'react';
+import { Head, Link, useForm } from '@inertiajs/react';
 import { route } from "momentum-trail"
+import { RiDonutChartFill, RiGithubFill, RiGoogleFill } from '@remixicon/react';
+import { InertiaFormErrors } from '@/Components/Inertia/FormErrors';
+
 
 export default function Login({
     status,
@@ -14,89 +30,131 @@ export default function Login({
         password: '',
         remember: false as boolean,
     });
-    const submit: FormEventHandler = (e) => {
+
+    const onSubmitHandler: FormEventHandler = (e) => {
         e.preventDefault();
         post(route("login"), {
             onFinish: () => reset('password'),
         });
     };
+
+
     return (
         <>
-            <Head title="Log in" />
-
-            {status && (
-                <div className="mb-4 text-sm font-medium text-green-600">
+            <Head title='Log In' />
+            {status &&
+                <Callout title='Ooops'>
                     {status}
-                </div>
-            )}
-
-            <form onSubmit={submit}>
-                <div>
-                    <InputLabel htmlFor="email" value="Email" />
-
-                    <TextInput
-                        id="email"
-                        type="email"
-                        name="email"
-                        value={data.email}
-                        className="mt-1 block w-full"
-                        autoComplete="username"
-                        isFocused={true}
-                        onChange={(e) => setData('email', e.target.value)}
-                    />
-
-                    <InputError message={errors.email} className="mt-2" />
-                </div>
-
-                <div className="mt-4">
-                    <InputLabel htmlFor="password" value="Password" />
-
-                    <TextInput
-                        id="password"
-                        type="password"
-                        name="password"
-                        value={data.password}
-                        className="mt-1 block w-full"
-                        autoComplete="current-password"
-                        onChange={(e) => setData('password', e.target.value)}
-                    />
-
-                    <InputError message={errors.password} className="mt-2" />
-                </div>
-
-                <div className="mt-4 block">
-                    <label className="flex items-center">
-                        <Checkbox
-                            name="remember"
-                            checked={data.remember}
-                            onChange={(e) =>
-                                setData(
-                                    'remember',
-                                    (e.target.checked || false) as false,
-                                )
-                            }
+                </Callout>
+            }
+            <InertiaFormErrors errors={errors} />
+            <div className="flex min-h-screen flex-1 flex-col justify-center px-4 lg:px-6">
+                <div className="sm:mx-auto sm:w-full sm:max-w-md">
+                    <div className="flex items-center space-x-2.5">
+                        <RiDonutChartFill
+                            className="size-7 text-gray-900 dark:text-gray-50"
+                            aria-hidden={true}
                         />
-                        <span className="ms-2 text-sm text-gray-600">
-                            Remember me
-                        </span>
-                    </label>
-                </div>
-
-                <div className="mt-4 flex items-center justify-end">
-                    {canResetPassword && (
+                        <p className="font-medium text-gray-900 dark:text-gray-50">
+                            Company
+                        </p>
+                    </div>
+                    <h3 className="mt-6 text-lg font-semibold text-gray-900 dark:text-gray-50">
+                        Sign in to your account
+                    </h3>
+                    <p className="mt-2 text-sm text-gray-500 dark:text-gray-500">
+                        Don't have an account?{' '}
                         <Link
-                            href={route('password.request')}
-                            className="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                            href={route("register")}
+                            className="font-medium text-blue-500 hover:text-blue-600 dark:text-blue-500 hover:dark:text-blue-600"
                         >
-                            Forgot your password?
+                            Sign up
                         </Link>
-                    )}
-
-                    <PrimaryButton className="ms-4" disabled={processing}>
-                        Log in
-                    </PrimaryButton>
+                    </p>
+                    <div className="mt-8 sm:flex sm:items-center sm:space-x-2">
+                        <Button asChild variant="secondary" className="w-full" disabled={processing}>
+                            <a href="#" className="inline-flex items-center gap-2">
+                                <RiGithubFill className="size-5 shrink-0" aria-hidden={true} />
+                                Login with GitHub
+                            </a>
+                        </Button>
+                        <Button asChild variant="secondary" className="mt-2 w-full sm:mt-0" disabled={processing}>
+                            <a href="#" className="inline-flex items-center gap-2">
+                                <RiGoogleFill className="size-4" aria-hidden={true} />
+                                Login with Google
+                            </a>
+                        </Button>
+                    </div>
+                    <Divider>or</Divider>
+                    <form onSubmit={onSubmitHandler} className="mt-6 space-y-4">
+                        <div>
+                            <Label
+                                htmlFor="email"
+                                className="text-sm font-medium text-gray-900 dark:text-gray-50"
+                            >
+                                Email
+                            </Label>
+                            <Input
+                                type="email"
+                                id="email"
+                                name="email"
+                                autoComplete="username"
+                                value={data.email}
+                                onChange={(e) => setData('email', e.target.value)}
+                                className="mt-2"
+                            />
+                        </div>
+                        <div>
+                            <Label
+                                htmlFor="password"
+                                className="text-sm font-medium text-gray-900 dark:text-gray-50"
+                            >
+                                Password
+                            </Label>
+                            <Input
+                                type="password"
+                                id="password"
+                                name="password"
+                                autoComplete="current-password"
+                                value={data.password}
+                                onChange={(e) => setData('password', e.target.value)}
+                                className="mt-2"
+                            />
+                        </div>
+                        <div className="flex items-start justify-end">
+                            <div className="flex h-6 items-center">
+                                <Checkbox
+                                    id="remember"
+                                    name="remember"
+                                    checked={data.remember}
+                                    onCheckedChange={(checked) => setData('remember', !!checked)}
+                                />
+                            </div>
+                            <Label
+                                htmlFor="remember"
+                                className="ml-3 leading-6 text-gray-500 dark:text-gray-500"
+                            >
+                                Remember Me
+                            </Label>
+                        </div>
+                        <Button type="submit" className="mt-4 w-full" disabled={processing}>
+                            {processing ? "..." : "Sign in"}
+                        </Button>
+                    </form>
+                    {
+                        canResetPassword &&
+                        <p className="mt-6 text-sm text-gray-500 dark:text-gray-500">
+                            Forgot your password?{' '}
+                            <Link
+                                href={route("password.request")}
+                                className="font-medium text-blue-500 hover:text-blue-600 dark:text-blue-500 hover:dark:text-blue-600"
+                            >
+                                Reset password
+                            </Link>
+                        </p>
+                    }
                 </div>
-            </form>
+            </div>
         </>
     );
 }
