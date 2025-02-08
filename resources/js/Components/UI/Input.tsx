@@ -1,8 +1,8 @@
 // Tremor Input [v1.0.5]
 
-import React from "react";
 import { RiEyeFill, RiEyeOffFill, RiSearchLine } from "@remixicon/react";
-import { tv, type VariantProps } from "tailwind-variants";
+import React from "react";
+import { type VariantProps, tv } from "tailwind-variants";
 
 import { cx, focusInput, focusRing, hasErrorInput } from "@/lib/utils/cx";
 

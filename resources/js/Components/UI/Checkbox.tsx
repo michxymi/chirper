@@ -1,7 +1,7 @@
 // Tremor Checkbox [v0.0.3]
 
-import React from "react";
 import * as CheckboxPrimitives from "@radix-ui/react-checkbox";
+import React from "react";
 
 import { cx, focusRing } from "@/lib/utils/cx";
 
@@ -57,7 +57,7 @@ const Checkbox = React.forwardRef<
 							x2="12"
 							y1="8"
 							y2="8"
-						></line>
+						/>
 					</svg>
 				) : (
 					<svg
@@ -74,7 +74,7 @@ const Checkbox = React.forwardRef<
 							strokeLinecap="round"
 							strokeLinejoin="round"
 							strokeWidth="2"
-						></path>
+						/>
 					</svg>
 				)}
 			</CheckboxPrimitives.Indicator>

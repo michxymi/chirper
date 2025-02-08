@@ -1,11 +1,11 @@
+import { InertiaFormErrors } from "@/Components/Inertia/FormErrors";
 import { Button } from "@/Components/UI/Button";
 import { Input } from "@/Components/UI/Input";
 import { Label } from "@/Components/UI/Label";
 import { Head, Link, useForm } from "@inertiajs/react";
-import { route } from "momentum-trail";
 import { RiDonutChartFill } from "@remixicon/react";
-import { FormEventHandler } from "react";
-import { InertiaFormErrors } from "@/Components/Inertia/FormErrors";
+import { route } from "momentum-trail";
+import type { FormEventHandler } from "react";
 
 export default function ResetPassword({
 	token,

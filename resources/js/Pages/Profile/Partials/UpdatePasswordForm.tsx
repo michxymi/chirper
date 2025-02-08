@@ -4,7 +4,7 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import TextInput from "@/Components/TextInput";
 import { Transition } from "@headlessui/react";
 import { useForm } from "@inertiajs/react";
-import { FormEventHandler, useRef } from "react";
+import { type FormEventHandler, useRef } from "react";
 
 export default function UpdatePasswordForm({
 	className = "",

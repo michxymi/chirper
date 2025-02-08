@@ -5,23 +5,23 @@
 
 // 'use client';
 
+import { InertiaFormErrors } from "@/Components/Inertia/FormErrors";
 import { Button } from "@/Components/UI/Button";
+import { Callout } from "@/Components/UI/Callout";
+import { Checkbox } from "@/Components/UI/Checkbox";
 import { Divider } from "@/Components/UI/Divider";
 import { Input } from "@/Components/UI/Input";
 import { Label } from "@/Components/UI/Label";
-import { Callout } from "@/Components/UI/Callout";
-import { Checkbox } from "@/Components/UI/Checkbox";
-import { FormEventHandler } from "react";
 import { Head, Link, useForm } from "@inertiajs/react";
-import { route } from "momentum-trail";
 import {
-	RiDonutChartFill,
+	RiCheckboxFill,
 	RiCloseCircleFill,
+	RiDonutChartFill,
 	RiGithubFill,
 	RiGoogleFill,
-	RiCheckboxFill,
 } from "@remixicon/react";
-import { InertiaFormErrors } from "@/Components/Inertia/FormErrors";
+import { route } from "momentum-trail";
+import type { FormEventHandler } from "react";
 
 export default function Login({
 	status,
@@ -86,7 +86,7 @@ export default function Login({
 							className="w-full"
 							disabled={processing}
 						>
-							<a href="#" className="inline-flex items-center gap-2">
+							<a href="/" className="inline-flex items-center gap-2">
 								<RiGithubFill className="size-5 shrink-0" aria-hidden={true} />
 								Login with GitHub
 							</a>
@@ -97,7 +97,7 @@ export default function Login({
 							className="mt-2 w-full sm:mt-0"
 							disabled={processing}
 						>
-							<a href="#" className="inline-flex items-center gap-2">
+							<a href="/" className="inline-flex items-center gap-2">
 								<RiGoogleFill className="size-4" aria-hidden={true} />
 								Login with Google
 							</a>

@@ -1,7 +1,7 @@
 // Tremor Label [v0.0.2]
 
-import React from "react";
 import * as LabelPrimitives from "@radix-ui/react-label";
+import React from "react";
 
 import { cx } from "@/lib/utils/cx";
 

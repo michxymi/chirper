@@ -1,7 +1,7 @@
 // Tremor Callout [v0.0.1]
 
 import React from "react";
-import { tv, type VariantProps } from "tailwind-variants";
+import { type VariantProps, tv } from "tailwind-variants";
 
 import { cx } from "@/lib/utils/cx";
 

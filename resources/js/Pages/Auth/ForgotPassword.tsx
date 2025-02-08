@@ -1,16 +1,16 @@
+import { InertiaFormErrors } from "@/Components/Inertia/FormErrors";
 import { Button } from "@/Components/UI/Button";
-import { Label } from "@/Components/UI/Label";
+import { Callout } from "@/Components/UI/Callout";
 import { Input } from "@/Components/UI/Input";
+import { Label } from "@/Components/UI/Label";
 import { Head, Link, useForm } from "@inertiajs/react";
 import {
 	RiCheckboxCircleFill,
 	RiCloseCircleFill,
 	RiDonutChartFill,
 } from "@remixicon/react";
-import { FormEventHandler } from "react";
 import { route } from "momentum-trail";
-import { Callout } from "@/Components/UI/Callout";
-import { InertiaFormErrors } from "@/Components/Inertia/FormErrors";
+import type { FormEventHandler } from "react";
 
 export default function ForgotPassword({ status }: { status?: string }) {
 	const { data, setData, post, processing, errors } = useForm({

@@ -5,16 +5,16 @@
 
 // 'use client';
 
-import { RiDonutChartFill, RiCloseCircleFill } from "@remixicon/react";
-import { Head, Link, useForm } from "@inertiajs/react";
-import { FormEventHandler } from "react";
-import { route } from "momentum-trail";
+import { InertiaFormErrors } from "@/Components/Inertia/FormErrors";
 import { Button } from "@/Components/UI/Button";
 import { Card } from "@/Components/UI/Card";
 import { Checkbox } from "@/Components/UI/Checkbox";
 import { Input } from "@/Components/UI/Input";
 import { Label } from "@/Components/UI/Label";
-import { InertiaFormErrors } from "@/Components/Inertia/FormErrors";
+import { Head, Link, useForm } from "@inertiajs/react";
+import { RiCloseCircleFill, RiDonutChartFill } from "@remixicon/react";
+import { route } from "momentum-trail";
+import type { FormEventHandler } from "react";
 
 export default function Register() {
 	const { data, setData, post, processing, errors, reset } = useForm({
@@ -136,14 +136,14 @@ export default function Register() {
 						<p className="text-center text-xs text-gray-500 dark:text-gray-500">
 							By signing in, you agree to our{" "}
 							<a
-								href="#"
+								href="/"
 								className="capitalize text-blue-500 hover:text-blue-600 dark:text-blue-500 hover:dark:text-blue-600"
 							>
 								Terms of use
 							</a>{" "}
 							and{" "}
 							<a
-								href="#"
+								href="/"
 								className="capitalize text-blue-500 hover:text-blue-600 dark:text-blue-500 hover:dark:text-blue-600"
 							>
 								Privacy policy
