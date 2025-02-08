@@ -14,9 +14,38 @@
 				"xdebug.php-debug",
 				"laravel.vscode-laravel",
 				"biomejs.biome",
-				"bradlc.vscode-tailwindcss"
+				"bradlc.vscode-tailwindcss",
+				"open-southeners.laravel-pint"
 			],
-			"settings": {}
+			"settings": {
+				"settings": {
+					"editor.formatOnSave": true,
+					"editor.formatOnPaste": true,
+					"php.validate.enable": false,
+					"intelephense.diagnostics.undefinedMethods": false,
+					"[javascript]": {
+						"editor.defaultFormatter": "biomejs.biome"
+					},
+					"[javascriptreact]": {
+						"editor.defaultFormatter": "biomejs.biome"
+					},
+					"[typescript]": {
+						"editor.defaultFormatter": "biomejs.biome"
+					},
+					"[typescriptreact]": {
+						"editor.defaultFormatter": "biomejs.biome"
+					},
+					"[json]": {
+						"editor.defaultFormatter": "biomejs.biome"
+					},
+					"[jsonc]": {
+						"editor.defaultFormatter": "biomejs.biome"
+					},
+					"[php]": {
+						"editor.defaultFormatter": "open-southeners.laravel-pint"
+					}
+				}
+			}
 		}
 	},
 	"remoteUser": "sail",
